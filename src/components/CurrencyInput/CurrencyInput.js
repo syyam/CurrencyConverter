@@ -5,15 +5,15 @@ import PropTypes from "prop-types";
 
 import styles from "./styles";
 
-const CurrencyInput = ({ label, value, onInputChange }) => {
+const CurrencyInput = ({ label, value, placeholderValue, onInputChange, keyboardType }) => {
     
     return (
         <View style={styles.container}> 
             <TextInput
                 testID={'currency-input'}
                 style={styles.textInput}
-                keyboardType="numeric"
-                placeholder = "Enter Amount in SEK"
+                keyboardType={keyboardType}
+                placeholder = {placeholderValue}
                 value={value}
                 onChangeText={(text) => { onInputChange(text) }}
             />
@@ -22,6 +22,9 @@ const CurrencyInput = ({ label, value, onInputChange }) => {
 }
 CurrencyInput.propTypes = {
     label: PropTypes.string,
+    placeholderValue: PropTypes.string,
+    keyboardType: PropTypes.string,
+
     value: PropTypes.string,
     onInputChange: PropTypes.func,
 };

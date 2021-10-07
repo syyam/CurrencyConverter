@@ -1,11 +1,13 @@
-import { GET_COUNTRY_LIST_RESQUEST, GET_CAPITAL, GET_CURRENCY, GET_POPULATION, GET_ALL_COUNTRY_DATA } from '../actions/Country';
+import { GET_COUNTRY_LIST_RESQUEST, SET_TEMP_COUNTRY_DATA, GET_CAPITAL, GET_CURRENCY, GET_POPULATION, GET_ALL_COUNTRY_DATA } from '../actions/Country';
 
 const initialState = {
     countries: [],
     capitals: [],
     currencyNames: [],
-    population: [],
-    countryMap: {}
+    population: '',
+    countryMap: {},
+    tempData: [],
+    isLoading: true
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,6 +34,16 @@ const reducer = (state = initialState, action) => {
             };
         }
 
+        case SET_TEMP_COUNTRY_DATA: {
+
+
+            const { payload, isLoading } = action;
+
+            return {
+                ...state, tempData: payload
+            };
+        }
+
         case GET_CAPITAL: {
 
 
@@ -45,10 +57,10 @@ const reducer = (state = initialState, action) => {
         case GET_POPULATION: {
 
 
-            const { populationList, isLoading } = action;
+            const { population, isLoading } = action;
 
             return {
-                ...state, population: populationList
+                ...state, population: population, isLoading
             };
         }
 

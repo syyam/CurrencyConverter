@@ -4,6 +4,8 @@ const styles = StyleSheet.create({
 
     labelText: {
         width:"20%",
+        alignItems: 'center',
+        alignSelf: 'center',
         textAlign:"center"
         // color: "white"
     },

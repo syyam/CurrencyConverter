@@ -5,19 +5,18 @@ import PropTypes from "prop-types";
 
 import styles from "./styles";
 
-const PopulationButton = ({ onButtonPress, text }) => {
+const PopulationButton = ({ pressHandlerPopulation }) => {
     
     return (
-        <TouchableOpacity style={styles.container} testID={'population-select'} onPress={() => {onButtonPress()}}>
-            <View style={styles.btnContainerStyle}>
-                <Text style={styles.btnTextStyle}> {text} </Text>
-            </View>
+        <TouchableOpacity style={styles.labelText} onPress={() => { pressHandlerPopulation() }} >
+            <Text style={styles.textLabel}>Get Results</Text>
+
         </TouchableOpacity>
     )
 }
 PopulationButton.propTypes = {
-    onButtonPress: PropTypes.func,
-    text: PropTypes.string,
+    pressHandlerPopulation: PropTypes.func,
+    
 };
 
 export default PopulationButton;

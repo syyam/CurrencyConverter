@@ -1,10 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import styles from './styles'
 import PropTypes from "prop-types";
 
 
-const Label = ({ label }) => <Text testID={'text'} style={styles.labelText}>{label}</Text>
+const Label = ({ label }) => {
+    return (
+        <View style={styles.labelText}>
+            <Text testID={'text'}>{label}</Text>
+
+        </View>
+    );
+};
+
 
 Label.propTypes = {
     label: PropTypes.string,

@@ -61,13 +61,13 @@ class Home extends Component {
         this.props.getCurrenciesList(this.state.baselabel)
     }
     showAlert = (type, info) =>
-            Alert.alert(
-                type,
-                info,
-            );
+        Alert.alert(
+            type,
+            info,
+        );
     componentDidUpdate(prevProps, previousState) {
         const { currencies, errorMsg } = this.props;
-        
+
         if (this.props?.currencies != null) {
 
             if (prevProps?.currencies != this.props.currencies) {
@@ -124,10 +124,6 @@ class Home extends Component {
         this.setState({ baseValue: val })
     }
 
-
-    onQuoteInputChnage = (val) => {
-        this.setState({ quoteValue: val })
-    }
     componentWillUnmount() {
         this._unsubscribe()
         this.keyboardDidShowListener.remove()
@@ -143,7 +139,6 @@ class Home extends Component {
 
         return (
             <Container >
-                <StatusBar translucent={false} barStyle="light-content" />
                 <KeyboardAvoidingView
                     behavior="position"
                     style={{ flex: 1, justifyContent: 'center' }}
@@ -159,7 +154,8 @@ class Home extends Component {
 
                             })
                         }}
-
+                        keyboardType="number"
+                        placeholderValue="Enter Value in SEK"
                         value={baseValue}
                         onInputChange={this.onBaseInputChnage}
                     />

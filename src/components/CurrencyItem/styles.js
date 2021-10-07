@@ -13,10 +13,20 @@ export default EStyleSheet.create({
         
     },
     columnRowTxtPopulation: {
-        fontSize: 17,
-        fontWeight: "400",
-        fontStyle: "normal",
-        textDecorationLine: 'underline'
+        width: "100%",
         
+    },
+    columnBtn: {
+        paddingHorizontal: 20, 
+
+        alignItems: "center",
+        width: "120%",
+        textAlign: "center",
+        
+    },
+    btnTextStyle: {
+        width: "20%",
+        paddingHorizontal: 20, 
+        color: "black",
     }
 });
